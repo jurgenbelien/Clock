@@ -16,6 +16,8 @@ void setup() {
 }
 
 void loop() {
+  clock.update();
+
   if (clock.ticked()) {
     Serial.println("Rising edge of clock signal received");
   }
