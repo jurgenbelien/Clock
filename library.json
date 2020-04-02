@@ -1,0 +1,16 @@
+{
+  "name": "Clock",
+  "keywords": "input, ouput",
+  "description": "Class for working with clock signal.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jurgenbelien/Clock.git"
+  },
+  "version": "0.1.0",
+  "exclude": [
+    "*.png",
+    "*.zip"
+  ],
+  "frameworks": "arduino",
+  "platforms": "*"
+}
