@@ -8,7 +8,11 @@ void Clock::init() {
 
 void Clock::update() {
   stateChanged = false;
-  if (durationSince(stateChangeTimestamp) > THROTTLE_INTERVAL) {
+  unsigned int stateChangeDuration = durationSince(stateChangeTimestamp);
+  unsigned int previousStateChangeDuration = durationSince(previousStateChangeTimestamp);
+  bool exceedsThrottledDuration = stateChangeDuration > previousStateChangeDuration / 4;
+
+  if (!state || (state && exceedsThrottledDuration)) {
     stateChanged = getHardwareState() != state;
     if (stateChanged) {
       previousStateChangeTimestamp = stateChangeTimestamp;
