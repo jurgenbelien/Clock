@@ -24,3 +24,7 @@ void loop() {
 }
 
 ```
+
+## Example circuit
+
+<img src="./example-circuit.svg">
