@@ -22,7 +22,7 @@ void Clock::update() {
   }
 
   // Execute registered callback
-  if (callback != NULL) {
+  if (callback != NULL && ticked()) {
     callback();
   }
 }
