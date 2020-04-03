@@ -17,6 +17,8 @@ class Clock {
     void init();
     void update();
 
+    bool rose();
+    bool fell();
     bool ticked();
 
     // Callbacks

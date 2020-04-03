@@ -27,8 +27,14 @@ void Clock::update() {
   }
 }
 
-bool Clock::ticked() {
+bool Clock::rose() {
   return stateChanged && state;
+}
+bool Clock::fell() {
+  return stateChanged && !state;
+}
+bool Clock::ticked() {
+  return fell();
 }
 
 void Clock::addCallback(void (*callback)()) {
