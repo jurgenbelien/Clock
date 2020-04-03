@@ -1,6 +1,11 @@
 #ifndef THROTTLE_INTERVAL
-  #define THROTTLE_INTERVAL 5
+  #define THROTTLE_INTERVAL 25
 #endif
+
+#ifndef PULSE_MAX_CHANGE_RATE
+  #define PULSE_MAX_CHANGE_RATE 16
+#endif
+
 
 #include <inttypes.h>
 #include <core_pins.h>

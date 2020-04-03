@@ -27,3 +27,4 @@ removeCallback	KEYWORD2
 #######################################
 
 THROTTLE_INTERVAL LITERAL1
+PULSE_MAX_CHANGE_RATE LITERAL1

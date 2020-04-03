@@ -9,8 +9,10 @@ void Clock::init() {
 void Clock::update() {
   stateChanged = false;
   unsigned int stateChangeDuration = durationSince(stateChangeTimestamp);
-  unsigned int previousStateChangeDuration = durationSince(previousStateChangeTimestamp);
-  bool exceedsThrottledDuration = stateChangeDuration > previousStateChangeDuration / 4;
+  bool exceedsThrottledDuration = true
+    && stateChangeDuration > THROTTLE_INTERVAL
+    && stateChangeDuration > durationSince(previousStateChangeTimestamp) / PULSE_MAX_CHANGE_RATE
+  ;
 
   if (!state || (state && exceedsThrottledDuration)) {
     stateChanged = getHardwareState() != state;
